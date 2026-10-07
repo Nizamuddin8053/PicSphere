@@ -192,19 +192,19 @@ The Vite development server will provide the local frontend URL.
 
 ### Explore / Posts
 
-![PicSphere Explore](./screenshots/explore.png)
+![alt text](<Screenshot 2026-10-07 141612.png>)
 
 ### Create Post
 
-![PicSphere Create Post](./screenshots/create-post.png)
+![alt text](<Screenshot 2026-10-07 141709.png>)
 
 ### User Profile
 
-![PicSphere Profile](./screenshots/profile.png)
+![alt text](<Screenshot 2026-10-07 141756.png>)
 
 ### Post Details
 
-![PicSphere Post Details](./screenshots/post-details.png)
+![alt text](<Screenshot 2026-10-07 141839.png>)
 
 ---
 
