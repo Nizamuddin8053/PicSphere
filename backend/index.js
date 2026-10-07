@@ -21,7 +21,6 @@ const port = process.env.PORT || 5000;
 app.use(
   cors({
     origin: [
-      "http://localhost:5173",
       "https://gregarious-capybara-5c27be.netlify.app",
     ],
     credentials: true,
