@@ -1,4 +1,4 @@
-import axios from "axios";
+import api from "../api/axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { PinData } from "../context/PinContext";
@@ -11,7 +11,7 @@ const UserProfile = ({ user: loggedInUser }) => {
 
   async function fetchUser() {
     try {
-      const { data } = await axios.get(`/api/user/${params.id}`);
+      const { data } = await api.get(`/api/user/${params.id}`);
       setUser(data);
     } catch (error) {
       console.log(error);
