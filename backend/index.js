@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import connectDb from "./database/db.js";
 import cookieParser from "cookie-parser";
 import cloudinary from "cloudinary";
+import cors from "cors";
 
 dotenv.config({ path: "./.env" });
 
@@ -16,7 +17,17 @@ const app = express();
 
 const port = process.env.PORT || 5000;
 
-// Middlewares
+// CORS
+app.use(
+  cors({
+    origin: [
+      "http://localhost:5173",
+      "https://gregarious-capybara-5c27be.netlify.app",
+    ],
+    credentials: true,
+  })
+);
+
 app.use(express.json());
 app.use(cookieParser());
 
@@ -27,7 +38,6 @@ import pinRoutes from "./routes/pinRoutes.js";
 app.use("/api/user", userRoutes);
 app.use("/api/pin", pinRoutes);
 
-// Health check
 app.get("/", (req, res) => {
   res.json({
     success: true,
@@ -42,7 +52,6 @@ app.get("/health", (req, res) => {
   });
 });
 
-// Start server
 const startServer = async () => {
   try {
     await connectDb();
@@ -57,4 +66,3 @@ const startServer = async () => {
 };
 
 startServer();
-
